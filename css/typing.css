@@ -1,0 +1,72 @@
+/* #typedtex{
+    font-family: 'Waiting for the Sunrise', cursive; 
+    font-size:30px; 
+    margin: 10px 50px; 
+    letter-spacing: 6px; 
+    font-weight: bold;
+} */
+/* Google Fonts */
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+/* Global */
+
+
+.line-1{
+    font-family: 'Anonymous Pro', monospace;  
+    position: relative;
+    width: 24em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 80px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    z-index: 3;    
+    height: 88px;
+    top: 20px;
+    text-align: center;
+    align-items: center;
+    line-height: 1;
+}
+
+/* Animation */
+.anim-typewriter{
+  animation: typewriter 2s steps(44) 1s 1 normal both,
+             blinkTextCursor 500ms steps(44) forwards normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 9.5em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
+}
+
+#typedtext{
+    z-index: 3;
+    position: relative;
+    width: 100%;
+    margin-left: 12px;
+    top: 20px;
+    font-family: 'Waiting for the Sunrise', cursive; 
+    font-size:17px; 
+    letter-spacing: 6px; 
+    font-weight: bold;
+}
+
+.text-1{
+    width: 50%;
+}
+
+.container_text-1-2{
+    padding-left: 12px;
+}
+@media screen and (max-width: 600px) {
+    .line-1{
+        font-size: 30px;
+        height: 34px;
+        margin-left: 0;
+    }
+    
+}
