@@ -76,7 +76,7 @@ img {
     z-index: 2;
     padding-top: 20px;
     font-family: 'Waiting for the Sunrise', cursive; 
-    font-size:18px; 
+    font-size:20px; 
     letter-spacing: 1px; 
     font-weight: bold;
 }
@@ -203,6 +203,13 @@ p {
     transform: scale3d(1, 1, 1);
   }
 }
+
+
+
+/* .animate__animated.animate__fadeOutLeft,.animate__animated.animate__fadeOutRight {
+  --animate-duration: 2s;
+} */
+
 
 /* Mobile responsiveness */
 @media (max-width: 480px) {

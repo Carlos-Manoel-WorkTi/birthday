@@ -4,6 +4,7 @@ body{
     font-family: "IBM Plex Serif", serif;
     font-weight: 100;
     font-style: normal;
+    min-height: 100%;
 }
 
 
@@ -21,7 +22,7 @@ body{
 #container_main {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     overflow-x: hidden;
     /* box-sizing: border-box; */
     padding-top: 10px;
@@ -238,7 +239,18 @@ body{
   position: relative;
 }
 
-@media screen and (max-width: 600px) {
+.container_text-1{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;    
+  height: 247px
+}
+@media screen and (min-width: 500px) {
+
+
+}
+
+@media screen and (max-width: 420px) {
   #container_main {
     height: 100vh;
   }
@@ -248,8 +260,9 @@ body{
   }
   #speaker_container {
     padding: 14px 4px 0 0;
-    width: 100%;
+    width: 10%;
     display: flex;
     justify-content: end;
 }
 }
+
