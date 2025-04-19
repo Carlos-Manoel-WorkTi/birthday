@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
     videoElement = document.getElementById('background_video');
     videoElement.muted = true;
 
-    aplicarFundoEImagens()
+    etapaUm()
 
 
     trocarVideoDeFundo();
