@@ -85,7 +85,7 @@ const section_img_2 = `
          </div>
          <div class="stack ft1 bounce-in-fwd animate__animated animate__backInRight ">
            <div class="card">
-           <div class="image" style="background-image: url('./public//images/ft3.jpg'); background-size: cover;"></div>
+           <div class="image" style="background-image: url('./public//images/ft6.jpg'); background-size: cover;"></div>
            </div>
            </div>
            </div>
@@ -159,7 +159,7 @@ const section_img_5 = `
           <div class="text-1" id="text-1">
           
           </div>
-          <div class="stack ft1 bounce-in-fwd animate__animated animate__bounceInRight">
+          <div class="img-5-1 stack ft1 bounce-in-fwd animate__animated animate__bounceInRight">
             <div class="card">
               <div class="image" style="background-image: url('./public//images/ft11.jpg'); background-size: cover;"></div>
             </div>
@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
     videoElement = document.getElementById('background_video');
     videoElement.muted = true;
 
-    etapaUm();
+    aplicarFundoEImagens()
 
 
     trocarVideoDeFundo();
@@ -252,12 +252,17 @@ function etapaUm() {
     initTyping({
       messages: [
         {
-          text: " Eu tinha 13 anos, e você também, embora eu seja um ano mais velho que você. Naquele momento, movido pelo desejo de fazer amizades, resolvi enviar uma mensagem no privado. Não era nada demais, talvez um simples ",
+          text: " Eu tinha 13 anos, e você também, embora eu seja um ano mais velho que você. Naquele momento, movido pelo desejo de fazer ",
           breakLine: false
         },
+        { text: "amizades", color: "#f48fb1", breakLine: false },
+        { text: ", resolvi enviar uma mensagem no privado. Não era nada demais, talvez um simples ", breakLine: false },
         { text: "'Oi'", color: "#e85b8b", breakLine: false },
+        { text: "Cada nova mensagem era como descobrir um pedacinho do seu universo,", breakLine: false },
+        { text: "e eu, sem perceber, já esperava ansioso pela próxima.", color: "#90caf9", breakLine: false },
         { text: ". Mas, naquele instante, iniciou-se algo que, até hoje, permanece.", breakLine: true }
       ],
+      
       element: "text-1.2",
       speed: 60,
       delay: 0
@@ -265,8 +270,8 @@ function etapaUm() {
   }, 23000);
 
   setTimeout(() => {
-    criarBotaoProximo(() => etapaDois(), false);
-  }, 41000);
+    criarBotaoProximo(() => etapaDois(), true);
+  }, 52000);
 }
 
 function etapaDois() {
@@ -307,18 +312,22 @@ function etapaDois() {
             { text: "E quanto mais o tempo passa,", breakLine: false },
             { text: "mais eu percebo o quanto você é especial pra mim.", color: "#fcbf49", breakLine: false },
             { text: "A cada dia, descubro novas razões para amar ainda mais,", breakLine: false },
+            { text: "seu jeito de falar, seu carinho, até mesmo suas manias me encantam.", breakLine: false },
+            { text: "É incrível como você transforma os meus dias com pequenos gestos.", color: "#AED581", breakLine: false },
+            { text: "me pego sorrindo à toa só de lembrar de você,", breakLine: false },
+            { text: "e contando os minutos pra te ver de novo.", color: "#4DD0E1", breakLine: false },
             { text: "cada sorriso seu ilumina meu mundo de um jeito indescritível.", color: "#FFC107", breakLine: false },
             { text: "Você sabe qual é o meu maior sonho?", breakLine: false },
             { text: "então deixa eu te contar...", breakLine: false },
-            { text: "", color: "#E91E63", breakLine: true }
           ],
+          
           element: "text-1.2",
           speed: 70,
           delay: 1000
         });
 
         // Após a digitação completa, exibe o botão de próximo
-        setTimeout(() => criarBotaoProximo(() => etapaTres(), false), 22000);
+        setTimeout(() => criarBotaoProximo(() => etapaTres(), true), 32000);
       }, 10000);
     }
   }, 500); // Tempo para os elementos antigos sumirem com animação
@@ -503,7 +512,7 @@ function etapaCinco() {
         speed: 70,
         delay: 500
       });
-    }, 19000);
+    }, 17000);
 
     setTimeout(() => {
       main.insertAdjacentHTML('beforeend', section_img_5_1);
@@ -518,7 +527,7 @@ function etapaCinco() {
         speed: 70,
         delay: 500
       });
-    }, 28000);
+    }, 22000);
 
     setTimeout(() => criarBotaoProximo(() => aplicarFundoEImagens()), 31000);
   }
@@ -556,22 +565,25 @@ function trocarVideoDeFundo() {
 
 
 function aplicarFundoEImagens() {
-  audio.pause(); // pausa se estiver tocando
-  audio.src = "../public/audio/song4.mp3"; // novo caminho
-  audio.load(); // carrega o novo áudio
-  audio.play(); 
-  const MainElement = document.getElementById('container_main');
-  if (MainElement) {
+  fadeAudioChange(audio, "../public/audio/song4.mp3");
+   setTimeout(() => {
+
+     const MainElement = document.getElementById('container_main');
+     if (MainElement) {
     const headerElement = document.getElementById('header_aniversario');
+    const line1 = document.querySelector('.line-1');
     MainElement.innerHTML = '';
+    line1.innerHTML = 'Te amo <strong style="color: #E91E63;">pra sempre </strong> nuito';
     if (headerElement) {
       MainElement.appendChild(headerElement);
     }
     MainElement.classList.add('hide-pseudo');
   }
-
+  
   document.body.style.backgroundColor = '#242323';
   alternarImagensComEfeito();
+
+  }, 2000); // Aguarda o fade-out do áudio atual
 }
 
 function alternarImagensComEfeito() {
@@ -666,4 +678,36 @@ function removeWithEffect(elementId, efeito) {
       element.remove(); // Remove após 2 segundos
     }, 500);
   }
+}
+
+function fadeAudioChange(audio, newSrc) {
+  const fadeOut = () => {
+    const fadeInterval = setInterval(() => {
+      if (audio.volume > 0.05) {
+        audio.volume -= 0.05;
+      } else {
+        clearInterval(fadeInterval);
+        audio.pause();
+        audio.src = newSrc;
+        audio.load();
+
+        fadeIn(); // começa a aumentar o volume após trocar o áudio
+      }
+    }, 100); // ajusta a velocidade do fade (em ms)
+  };
+
+  const fadeIn = () => {
+    audio.play();
+    audio.volume = 0;
+    const fadeInterval = setInterval(() => {
+      if (audio.volume < 0.95) {
+        audio.volume += 0.05;
+      } else {
+        audio.volume = 1;
+        clearInterval(fadeInterval);
+      }
+    }, 100);
+  };
+
+  fadeOut(); // inicia o fade-out
 }

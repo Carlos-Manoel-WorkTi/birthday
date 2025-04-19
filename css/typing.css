@@ -146,7 +146,7 @@
   
     #img_card_one, #img_card_three, #img_card_three_2 {
         padding-top: 20px;
-        font-size: 20px;
+        font-size: 21px;
         letter-spacing: 1px;
         font-weight: bold;
     }
@@ -161,14 +161,20 @@
         align-items: center;    height: 200px
       }
     .container_text-3{
-        display: flex;justify-content: start;align-items: center;    height: 239px;  padding-left: 12px;
+        display: flex;justify-content: start;align-items: center;    height: 242px;  padding-left: 12px;
       }
     .container_text-3-2{
         display: flex;justify-content:space-around;align-items: center;    height: 179px;  padding-bottom: 30px;
       }
-    .container_text-5-2{
-        display: flex;justify-content:space-between;align-items: center;    height: 179px;  padding-bottom: 30px; padding-left: 12PX; padding-right: 15px;
-      }
+      .container_text-5-2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 207px;
+        padding-bottom: 6px;
+        padding-left: 12PX;
+        padding-right: 15px;
+    }
     .container_text-4{
         display: flex;justify-content:space-around;align-items: center;    height: 194px;  padding-bottom: 8px;
       }
@@ -178,6 +184,9 @@
     #container_button_next {
         position: relative;
         bottom: 0px;
+    }
+    .img-5-1{
+        width: 43%;
     }
 
 }
@@ -189,13 +198,13 @@
     }
     
     #typedtext3, #typedtext5{ 
-        font-size: 16px;
+        font-size: 20px;
         letter-spacing: 3px;
         font-weight: bold;
     }
     #img_card_three, #img_card_three_2 {
         padding-top: 20px;
-        font-size: 16px;
+        font-size: 20px;
     }
     .stack {
         width: 46%;
@@ -208,4 +217,46 @@
         height: 239px;
         padding-left: 12px;
       }
+      .img-5-1{
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .stack {
+        width: 35%;
+    }
+    .container_text-2{
+        display: flex;
+        justify-content: space-around;
+        height: 185px;
+        align-items: center;
+    }
+    .container_text-3-2{
+        display: flex;
+        justify-content: space-around;
+        height: 179px;
+        align-items: center;
+        padding-bottom: 20px    ;
+    }
+    .container_text-4{
+        display: flex;
+        justify-content: space-around;
+        height: 230px;
+        align-items: center;
+        padding-bottom: 8px;
+    }
+    .container_text-5-2 {
+        display: flex
+;
+        justify-content: space-between;
+        height: 233px;
+        align-items: center;
+        padding-bottom: 4px;
+        padding-left: 12PX;
+        padding-right: 20px;
+    }
+    .img-5-1{
+        width: 48%;
+    }
 }

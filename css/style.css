@@ -226,7 +226,7 @@ body{
 }
 
 #checkboxInput:hover + .toggleSwitch {
-  background-color: rgb(61, 61, 61);
+  background-color: rgba(61, 61, 61, 0.105);
 }
 
 #container_button_next{
