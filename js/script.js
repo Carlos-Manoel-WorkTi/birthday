@@ -191,7 +191,28 @@ const section_img_5_1 = `
         
     </section>
 `
-
+const section_fim = `
+      <div class="unique-fullscreen">
+        <div class="unique-text-container">
+          <span>f</span>
+          <span>e</span>
+          <span>l</span>
+          <span>i</span>
+          <span>z</span>
+          <span>_</span>
+          <span>a</span>
+          <span>n</span>
+          <span>i</span>
+          <span>v</span>
+          <span>e</span>
+          <span>r</span>
+          <span>s</span>
+          <span>á</span>
+          <span>r</span>
+          <span>i</span>
+          <span>o</span>
+        </div>
+      </div>`
 const videosDeFundo = [
   '../public/videos/video1.mp4',
   '../public/videos/video1.mp4'
@@ -208,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
     videoElement.muted = true;
 
     etapaUm()
-
+    
 
     trocarVideoDeFundo();
     setInterval(trocarVideoDeFundo, 25000);
@@ -566,25 +587,40 @@ function trocarVideoDeFundo() {
 
 function aplicarFundoEImagens() {
   fadeAudioChange(audio, "../public/audio/song4.mp3");
-   setTimeout(() => {
-
-     const MainElement = document.getElementById('container_main');
-     if (MainElement) {
-    const headerElement = document.getElementById('header_aniversario');
-    const line1 = document.querySelector('.line-1');
-    MainElement.innerHTML = '';
-    line1.innerHTML = 'Te amo <strong style="color: #E91E63;">pra sempre </strong> nuito';
-    if (headerElement) {
-      MainElement.appendChild(headerElement);
-    }
-    MainElement.classList.add('hide-pseudo');
-  }
   
-  document.body.style.backgroundColor = '#242323';
-  alternarImagensComEfeito();
+  setTimeout(() => {
+    const MainElement = document.getElementById('container_main');
+    
+    if (MainElement) {
+      const headerElement = document.getElementById('header_aniversario');
+      const line1 = document.querySelector('.line-1');
+      MainElement.innerHTML = '';
+      line1.innerHTML = 'Te amo <strong style="color: #E91E63;">pra sempre </strong> nuito';
+
+      if (headerElement) {
+        MainElement.appendChild(headerElement);
+      }
+
+      MainElement.classList.add('hide-pseudo');
+    }
+
+    document.body.style.backgroundColor = '#242323';
+    alternarImagensComEfeito();
+
+    // Adiciona a div section_fim ao final do body
+    // Cria um container temporário para transformar a string em DOM real
+const tempDiv = document.createElement('div');
+tempDiv.innerHTML = section_fim;
+
+// Pega o primeiro elemento real (a div .unique-fullscreen)
+const finalSection = tempDiv.firstElementChild;
+
+// Adiciona ao final do body
+document.body.appendChild(finalSection);
 
   }, 2000); // Aguarda o fade-out do áudio atual
 }
+
 
 function alternarImagensComEfeito() {
   const imagens = [
