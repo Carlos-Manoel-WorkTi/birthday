@@ -209,6 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     etapaUm();
 
+
     trocarVideoDeFundo();
     setInterval(trocarVideoDeFundo, 25000);
 
@@ -555,6 +556,10 @@ function trocarVideoDeFundo() {
 
 
 function aplicarFundoEImagens() {
+  audio.pause(); // pausa se estiver tocando
+  audio.src = "../public/audio/song4.mp3"; // novo caminho
+  audio.load(); // carrega o novo áudio
+  audio.play(); 
   const MainElement = document.getElementById('container_main');
   if (MainElement) {
     const headerElement = document.getElementById('header_aniversario');
