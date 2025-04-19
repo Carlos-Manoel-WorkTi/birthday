@@ -68,18 +68,7 @@ img {
     }
   }
   
-  #img_card_one{
-    position: relative;
-    /* display: flex;
-    justify-content: space-around;
-    align-items: center; */
-    z-index: 2;
-    padding-top: 20px;
-    font-family: 'Waiting for the Sunrise', cursive; 
-    font-size:20px; 
-    letter-spacing: 1px; 
-    font-weight: bold;
-}
+
 
 /* Efeito de máquina de escrever */
 @keyframes typing {
